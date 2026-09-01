@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>沖縄 家族旅行ガイドブック｜2026.9.12–9.15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;700;800&family=IBM+Plex+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sea:#073B4C;
+  --lagoon:#0E7C8B;
+  --foam:#E8F6F6;
+  --sand:#F4EBD8;
+  --paper:#FBF6EC;
+  --ink:#142028;
+  --muted:#5C6B73;
+  --coral:#E25B45;
+  --gold:#E2B15A;
+  --night:#1A1230;
+  --line:rgba(20,32,40,.12);
+  --r:22px;
+  --shadow:0 18px 50px rgba(7,59,76,.14);
+  --font-display:"Shippori Mincho",serif;
+  --font-en:"Fraunces",serif;
+  --font-body:"IBM Plex Sans JP",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-body);font-size:16px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+a{color:inherit}
+.skip{
+  position:absolute;left:-999px;top:8px;background:#fff;padding:8px 12px;z-index:100;
+}
+.skip:focus{left:8px}
+.wrap{width:min(920px,100%);margin:0 auto;padding:0 20px}
+.en{font-family:var(--font-en);font-optical-sizing:auto;letter-spacing:.04em}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.25;margin:0}
+
+/* COVER */
+.cover{
+  position:relative;min-height:100dvh;color:#fff;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  overflow:hidden;
+}
+.cover img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform:scale(1.04);
+}
+.cover::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(7,59,76,.18) 0%, rgba(7,59,76,.08) 32%, rgba(7,59,76,.72) 100%);
+}
+.cover-inner{position:relative;z-index:1;padding:32px 22px 48px;width:min(920px,100%);margin:0 auto}
+.cover-kicker{
+  display:inline-flex;gap:10px;align-items:center;
+  font-size:12px;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;opacity:.92;margin-bottom:18px;
+}
+.cover h1{
+  font-size:clamp(64px,16vw,128px);font-weight:800;letter-spacing:.08em;
+  line-height:.9;text-shadow:0 10px 40px rgba(0,0,0,.28);
+}
+.cover .lead{
+  margin:14px 0 0;font-size:clamp(18px,3.4vw,26px);font-weight:600;
+  max-width:18em;
+}
+.cover-meta{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px}
+.pill{
+  border:1px solid rgba(255,255,255,.38);
+  background:rgba(255,255,255,.12);backdrop-filter:blur(10px);
+  border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;
+}
+
+/* NAV */
+.daynav{
+  position:sticky;top:0;z-index:40;
+  background:rgba(251,246,236,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.daynav-scroll{
+  display:flex;gap:8px;overflow-x:auto;padding:12px 20px;
+  scrollbar-width:none;width:min(920px,100%);margin:0 auto;
+}
+.daynav-scroll::-webkit-scrollbar{display:none}
+.daynav a{
+  flex:0 0 auto;text-decoration:none;min-height:44px;
+  display:inline-flex;align-items:center;padding:0 14px;border-radius:999px;
+  border:1px solid var(--line);background:#fff;color:var(--muted);
+  font-size:13px;font-weight:700;
+}
+.daynav a:focus-visible{outline:3px solid var(--lagoon);outline-offset:2px}
+
+/* TOC */
+.toc{padding:56px 0 20px}
+.issue{
+  display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  border-bottom:1px solid var(--ink);padding-bottom:14px;margin-bottom:28px;
+}
+.issue small{letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:var(--muted);font-weight:700}
+.toc-grid{display:grid;gap:14px}
+@media(min-width:720px){.toc-grid{grid-template-columns:1fr 1fr}}
+.toc-card{
+  position:relative;overflow:hidden;border-radius:var(--r);min-height:210px;color:#fff;
+  text-decoration:none;box-shadow:var(--shadow);display:block;
+}
+.toc-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.toc-card .shade{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 20%,rgba(10,24,32,.82));
+}
+.toc-card .body{position:absolute;left:18px;right:18px;bottom:16px}
+.toc-card .n{font-family:var(--font-en);font-size:12px;letter-spacing:.16em;opacity:.85}
+.toc-card h3{font-size:24px;margin-top:4px}
+
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0 8px}
+.info-card{
+  background:#fff;border-radius:18px;padding:16px 16px 18px;
+  border:1px solid var(--line);box-shadow:0 8px 24px rgba(7,59,76,.06);
+}
+.info-card dt{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.info-card dd{margin:6px 0 0;font-family:var(--font-display);font-size:17px;font-weight:700}
+
+/* CHAPTER */
+.chapter{padding:8px 0 36px}
+.opener{
+  position:relative;margin:0 -20px 28px;min-height:58vh;color:#fff;
+  overflow:hidden;border-radius:0 0 32px 32px;
+}
+@media(min-width:720px){
+  .opener{margin:0;border-radius:28px;min-height:64vh}
+}
+.opener img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.opener .shade{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(7,59,76,.05),rgba(7,59,76,.78));
+}
+.opener .cap{
+  position:absolute;left:22px;right:22px;bottom:22px;
+}
+.opener .dayno{
+  font-family:var(--font-en);letter-spacing:.2em;font-size:12px;opacity:.9;
+}
+.opener h2{font-size:clamp(32px,7vw,52px);margin:8px 0 6px;font-weight:800}
+.opener p{margin:0;max-width:28em;font-size:15px;opacity:.95}
+.date-row{display:flex;align-items:center;gap:10px;margin:0 0 10px}
+.badge{
+  display:inline-flex;align-items:center;min-height:32px;padding:0 12px;
+  border-radius:999px;color:#fff;font-size:12px;font-weight:800;letter-spacing:.08em;
+}
+
+.prose{color:var(--muted);font-size:15px;margin:0 0 22px}
+.photo-fig{margin:0 0 22px;border-radius:20px;overflow:hidden;background:#ddd;box-shadow:var(--shadow)}
+.photo-fig img{width:100%;height:240px;object-fit:cover}
+@media(min-width:720px){.photo-fig img{height:340px}}
+.photo-fig figcaption{
+  background:#fff;padding:10px 14px;font-size:12px;color:var(--muted);
+  border-top:1px solid var(--line);
+}
+.duo{display:grid;gap:12px;margin:0 0 24px}
+@media(min-width:640px){.duo{grid-template-columns:1.2fr .8fr}}
+.duo .photo-fig{margin:0}
+.duo img{height:200px}
+@media(min-width:640px){.duo img{height:260px}}
+
+/* TIMELINE */
+.timeline{position:relative;margin:8px 0 8px;padding-left:28px}
+.timeline::before{
+  content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:#d9cbb0;
+}
+.t-item{position:relative;padding-bottom:22px}
+.t-item[hidden]{display:none}
+.t-dot{
+  position:absolute;left:-28px;top:4px;width:18px;height:18px;border-radius:50%;
+  background:var(--accent,#E25B45);box-shadow:0 0 0 5px var(--paper);
+}
+.t-time{font-size:13px;font-weight:700;color:var(--accent,#E25B45);margin-bottom:6px}
+.spot{
+  background:#fff;border-radius:20px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 10px 28px rgba(7,59,76,.07);
+}
+.spot img{width:100%;height:210px;object-fit:cover}
+.spot .inner{padding:14px 16px 16px}
+.spot h3{font-size:20px;margin:0 0 6px}
+.spot p{margin:0;color:var(--muted);font-size:14.5px}
+.tips{
+  margin-top:10px;padding:10px 12px;border-radius:12px;
+  background:var(--foam);color:var(--sea);font-size:13px;
+}
+
+/* MEALS */
+.meals{margin-top:28px}
+.meals h4{
+  font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  margin:0 0 12px;color:var(--muted);
+}
+.meal-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+.meal-scroll::-webkit-scrollbar{display:none}
+.meal{
+  flex:0 0 210px;background:#fff;border-radius:18px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 8px 22px rgba(7,59,76,.07);
+}
+.meal img{width:100%;height:140px;object-fit:cover}
+.meal .inner{padding:12px 14px 16px}
+.meal h5{margin:0 0 4px;font-size:16px}
+.meal p{margin:0;font-size:12.5px;color:var(--muted)}
+
+/* CHOICE */
+.choice{
+  margin:8px 0 28px;padding:22px;border-radius:24px;
+  background:linear-gradient(180deg,#fff 0%, #F7F1E3 100%);
+  border:1px solid var(--line);
+}
+.choice h3{font-size:22px;margin:0 0 6px}
+.choice .lead{margin:0 0 16px;color:var(--muted);font-size:14.5px}
+.choice-grid{display:grid;gap:10px}
+@media(min-width:700px){.choice-grid{grid-template-columns:repeat(3,1fr)}}
+.opt{
+  text-align:left;border:1.5px solid var(--line);background:#fff;
+  border-radius:18px;overflow:hidden;padding:0;min-height:44px;
+  transition:transform .2s ease, border-color .2s ease;
+}
+.opt:hover{transform:translateY(-2px)}
+.opt.is-on{border-color:var(--sea);box-shadow:0 0 0 3px rgba(14,124,139,.18)}
+.opt img{width:100%;height:118px;object-fit:cover}
+.opt .inner{padding:12px 12px 14px}
+.opt .tag{
+  display:inline-block;font-size:10px;font-weight:800;letter-spacing:.1em;
+  color:#fff;background:var(--sea);border-radius:999px;padding:3px 8px;margin-bottom:6px;
+}
+.opt h4{font-size:16px;margin:0 0 4px}
+.opt p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.55}
+.opt:focus-visible{outline:3px solid var(--lagoon);outline-offset:2px}
+
+.detour{
+  margin:8px 0 22px;border-radius:24px;overflow:hidden;
+  background:#fff;border:1.5px solid var(--gold);box-shadow:var(--shadow);
+}
+.detour img{width:100%;height:220px;object-fit:cover}
+@media(min-width:720px){.detour img{height:280px}}
+.detour .inner{padding:16px 18px 20px}
+.detour h3{font-size:22px;margin:0 0 8px}
+.detour p{margin:0 0 10px;color:var(--muted);font-size:14.5px}
+.detour a{color:var(--lagoon);font-weight:700}
+.hours-warn{
+  display:flex;gap:10px;align-items:flex-start;
+  background:#FFF6D8;border-radius:14px;padding:12px 14px;
+  font-size:13.5px;color:var(--ink);margin:12px 0 0;
+}
+.hours-warn strong{display:block;margin-bottom:2px}
+
+.swap{
+  margin:8px 12px 8px;padding:22px;border-radius:24px;
+  background:linear-gradient(135deg,#FFF6D8,#FDE8E3);
+  border:1.5px dashed #E2B15A;
+}
+.swap h3{font-size:20px;margin:0 0 6px}
+.swap p{margin:0 0 14px;color:var(--muted);font-size:14.5px}
+.toggle{display:flex;background:#fff;border-radius:999px;padding:6px;gap:4px}
+.toggle button{
+  flex:1;border:0;background:transparent;min-height:44px;border-radius:999px;
+  font-weight:700;font-size:14px;color:var(--muted);
+}
+.toggle button.is-active{background:var(--sea);color:#fff}
+.day-pair{display:flex;flex-direction:column}
+.day-pair #seaDay{order:1}
+.day-pair #caveDay{order:2}
+.day-pair.swapped #seaDay{order:2}
+.day-pair.swapped #caveDay{order:1}
+
+.memo{
+  margin:40px 0 20px;background:var(--sea);color:#fff;
+  border-radius:28px;padding:28px 22px;
+}
+.memo h2{font-size:26px;margin:0 0 12px}
+.memo ul{margin:0;padding-left:18px}
+.memo li{margin:8px 0}
+
+footer{
+  margin-top:20px;padding:36px 20px 64px;text-align:center;
+  color:var(--muted);font-size:12.5px;
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .opt,.toggle button{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#overview">本文へスキップ</a>
+
+<header class="cover">
+  <img src="images/hero-beach.jpg" alt="本部町エメラルドビーチの青い海と白い砂浜">
+  <div class="cover-inner">
+    <div class="cover-kicker en">Family Guide · Okinawa Main Island</div>
+    <h1>沖縄</h1>
+    <p class="lead">海も、洞窟も、ネオンの夜も。<br>姉妹ふたりと見つける、4つの「はじめて」。</p>
+    <div class="cover-meta">
+      <span class="pill">2026.9.12（土）〜 9.15（火）</span>
+      <span class="pill">3泊4日</span>
+      <span class="pill">オキナワグランメールリゾート</span>
+    </div>
+  </div>
+</header>
+
+<nav class="daynav" aria-label="日程ナビ">
+  <div class="daynav-scroll">
+    <a href="#overview">概要</a>
+    <a href="#day1">1日目 北谷</a>
+    <a href="#seaDay">海の日</a>
+    <a href="#caveDay">洞窟の日</a>
+    <a href="#day4">4日目 那覇</a>
+  </div>
+</nav>
+
+<main>
+  <section class="wrap toc" id="overview">
+    <div class="issue">
+      <small class="en">Contents / 2026 September</small>
+      <small>VOL.01</small>
+    </div>
+    <div class="toc-grid">
+      <a class="toc-card" href="#day1">
+        <img src="images/av-day.jpg" alt="美浜アメリカンビレッジの街並み">
+        <span class="shade"></span>
+        <div class="body"><div class="n">DAY 01 · SAT 9.12</div><h3>北谷の夜へ</h3></div>
+      </a>
+      <a class="toc-card" href="#seaDay">
+        <img src="images/churaumi.jpg" alt="美ら海水族館の巨大水槽とジンベエザメ">
+        <span class="shade"></span>
+        <div class="body"><div class="n">SEA DAY</div><h3>海の中と大水槽</h3></div>
+      </a>
+      <a class="toc-card" href="#caveDay">
+        <img src="images/cave.jpg" alt="おきなわワールド玉泉洞の鍾乳洞">
+        <span class="shade"></span>
+        <div class="body"><div class="n">CAVE DAY</div><h3>太古の地下探検</h3></div>
+      </a>
+      <a class="toc-card" href="#day4">
+        <img src="images/kokusai.jpg" alt="那覇市国際通り">
+        <span class="shade"></span>
+        <div class="body"><div class="n">DAY 04 · TUE 9.15</div><h3>最後のお土産探し</h3></div>
+      </a>
+    </div>
+
+    <dl class="info-grid">
+      <div class="info-card"><dt>Stay</dt><dd>オキナワグランメールリゾート</dd></div>
+      <div class="info-card"><dt>Dates</dt><dd>9/12（土）〜 9/15（火）</dd></div>
+      <div class="info-card"><dt>Area</dt><dd>中部拠点 → 北谷／北部／南部／那覇</dd></div>
+      <div class="info-card"><dt>Theme</dt><dd>4つの「はじめて」を1冊に</dd></div>
+    </dl>
+    <p class="prose">2026年のカレンダーでは、12日は土曜日、15日は火曜日です。2日目と3日目は天気で入れ替えできます。パイナップルパークは残しつつ、同ルートで映える<strong>琉球村</strong>と<strong>万座毛</strong>も午後の候補に入れました。</p>
+  </section>
+
+  <!-- DAY 1 -->
+  <section class="chapter" id="day1">
+    <div class="opener">
+      <img src="images/av-day.jpg" alt="美浜アメリカンビレッジのカラフルな建物">
+      <span class="shade"></span>
+        <div class="cap wrap">
+        <div class="date-row"><span class="badge" style="background:#E25B45">1日目</span><span>9月12日（土）</span></div>
+        <div class="dayno en">CHATAN NIGHT</div>
+        <h2>異国情緒とネオンの街へ</h2>
+        <p>到着夜は、歩いて楽しい北谷・美浜へ。観覧車は2022年になくなっていますが、デポアイランドの街並みと隣のサンセットビーチは健在です。</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="duo">
+        <figure class="photo-fig">
+          <img src="images/sunset-beach.jpg" alt="北谷サンセットビーチ">
+          <figcaption>隣のサンセットビーチ。日没後の散歩にもぴったり。</figcaption>
+        </figure>
+        <figure class="photo-fig">
+          <img src="images/av-day.jpg" alt="アメリカンビレッジのリゾート街並み">
+          <figcaption>西海岸らしい、色の多い通り。</figcaption>
+        </figure>
+      </div>
+      <div class="timeline">
+        <div class="t-item">
+          <span class="t-dot"></span>
+          <div class="t-time">20:45〜</div>
+          <article class="spot">
+            <img src="images/av-day.jpg" alt="美浜アメリカンビレッジ">
+            <div class="inner">
+              <h3>美浜アメリカンビレッジ</h3>
+              <p>到着後のウォーミングアップに。ショップとライト、海辺の風をひと通り味わう夜です。旧観覧車跡地はホテルになっているので、目印は「桑江交差点」やデポアイランドで十分です。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="meals">
+        <h4>Dinner · 北谷</h4>
+        <div class="meal-scroll">
+          <article class="meal">
+            <img src="images/steak.jpg" alt="ステーキのイメージ">
+            <div class="inner">
+              <h5>ステーキハウス88 北谷店</h5>
+              <p>at's chatan 2F。がっつり肉で初日の乾杯。子どもメニューあり。</p>
+            </div>
+          </article>
+          <article class="meal">
+            <img src="images/aw.jpg" alt="沖縄のA&Wのフードとルートビア">
+            <div class="inner">
+              <h5>A&amp;W 美浜店</h5>
+              <p>沖縄に残るA&amp;W。バーガーとルートビアフロートが名物。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="swap">
+      <h3>2日目・3日目は天気で入れ替えOK</h3>
+      <p>海のアクティビティは晴れた日に。洞窟は雨でも快適（洞内は約21℃）なので、天気予報を見て朝に入れ替えてください。</p>
+      <div class="toggle">
+        <button type="button" id="btnSeaFirst" class="is-active" onclick="setOrder(false)">海の日を先に</button>
+        <button type="button" id="btnCaveFirst" onclick="setOrder(true)">洞窟の日を先に</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-pair" id="dayPair">
+    <!-- SEA -->
+    <section class="chapter" id="seaDay" style="--accent:#0E7C8B">
+      <div class="opener">
+        <img src="images/churaumi.jpg" alt="美ら海水族館 黒潮の海">
+        <span class="shade"></span>
+        <div class="cap wrap">
+          <div class="date-row"><span class="badge" style="background:#0E7C8B"><span class="day-num-text">2日目</span></span><span class="day-date-text">9月13日（日）</span></div>
+          <div class="dayno en">SEA &amp; WHALE SHARK</div>
+          <h2>海の中へ、それから大水槽へ</h2>
+          <p>午前は名護・済井出の潜水スクーター。古宇利の手前の、透明度の高い穏やかな海です。</p>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="timeline">
+          <div class="t-item">
+            <span class="t-dot"></span>
+            <div class="t-time">10:00–11:15</div>
+            <article class="spot">
+              <img src="images/scooter-asoview.jpg" alt="黄色い潜水スクーターで魚に餌付けする体験">
+              <div class="inner">
+                <h3>潜水スクーター（名護・済井出）</h3>
+                <p>集合は<a href="https://www.asoview.com/item/activity/pln3000037542/" target="_blank" rel="noopener">思い出販売所 美ら海</a>。ヘルメット型なので顔が濡れず、泳げなくてもOK。魚の餌付けつき。出航から帰港まで約1時間。</p>
+                <div class="tips">20分前受付。水着とタオル。メガネ・メイクそのままで乗れる。写真はLINEで送ってもらえます。</div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="duo">
+          <figure class="photo-fig">
+            <img src="images/kouri-beach.jpg" alt="古宇利ビーチの穏やかなターコイズの海">
+            <figcaption>体験海域は古宇利大橋の手前。こんなに穏やかな色です。</figcaption>
+          </figure>
+          <figure class="photo-fig">
+            <img src="images/scooter-asoview.jpg" alt="黄色い潜水スクーターと熱帯魚">
+            <figcaption>黄色いスクーターに乗って、お魚に会いにいく。</figcaption>
+          </figure>
+        </div>
+
+        <div class="timeline">
+          <div class="t-item">
+            <span class="t-dot"></span>
+            <div class="t-time">11:30頃</div>
+            <article class="spot">
+              <img src="images/latte.jpg" alt="ラテのイメージ">
+              <div class="inner">
+                <h3>The Sinmay（今帰仁・玉城）</h3>
+                <p>済井出からすぐ。目の前で黒糖を削る生黒糖ラテが看板。テイクアウト中心。公式：<a href="https://www.thesinmay.com" target="_blank" rel="noopener">thesinmay.com</a></p>
+                <div class="tips">10:00–16:30（L.O. 16:20）・不定休。混むと10–20分待ち。このあときしもと食堂へ。</div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="meals">
+          <h4>Order · The Sinmay</h4>
+          <div class="meal-scroll">
+            <article class="meal">
+              <img src="images/latte.jpg" alt="ラテのイメージ">
+              <div class="inner">
+                <h5>生黒糖ラテ</h5>
+                <p>R 650円 / L 800円。削りたての黒糖が雪のように乗る一杯。</p>
+              </div>
+            </article>
+            <article class="meal">
+              <img src="images/cafe-bench.jpg" alt="カフェで一息つくイメージ">
+              <div class="inner">
+                <h5>こどもココア / タコス</h5>
+                <p>ココア R 400円。軽食もあり。子どもと並んでも負担が少ない。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="meals">
+          <h4>Lunch · ルートで選ぶ</h4>
+          <div class="meal-scroll">
+            <article class="meal">
+              <img src="images/soba.jpg" alt="沖縄そば（ソーキそば）">
+              <div class="inner">
+                <h5>きしもと食堂（本部）</h5>
+                <p>済井出から美ら海へ向かう途中。明治創業の沖縄そば。水曜定休。</p>
+              </div>
+            </article>
+            <article class="meal">
+              <img src="images/pancakes.jpg" alt="パンケーキのイメージ">
+              <div class="inner">
+                <h5>パニラニ（恩納・瀬良垣）</h5>
+                <p>午後に琉球村・万座毛へ南下する日だけ。済井出からは少し戻る。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="choice" id="afternoonChoice">
+          <h3>午後の寄り道、3つの候補</h3>
+          <p class="lead">午前が済井出なので、午後も北部に残すと楽。パイナップルパークは名護で寄りやすい。琉球村・万座毛は南へ戻る分、ドライブが増えます。</p>
+          <div class="choice-grid" role="tablist" aria-label="午後の候補">
+            <button type="button" class="opt is-on" data-choice="ryukyu" onclick="setAfternoon('ryukyu')">
+              <img src="images/ryukyu-gate.jpg" alt="琉球村の赤瓦と緑">
+              <div class="inner">
+                <span class="tag">推し</span>
+                <h4>琉球村</h4>
+                <p>恩納・山田。体験は濃い。済井出からは南へ戻るので、その日は北部完結の方が楽。</p>
+              </div>
+            </button>
+            <button type="button" class="opt" data-choice="manzamo" onclick="setAfternoon('manzamo')">
+              <img src="images/manzamo.jpg" alt="万座毛の断崖と海">
+              <div class="inner">
+                <span class="tag" style="background:#E2B15A;color:#142028">短時間</span>
+                <h4>万座毛</h4>
+                <p>象の鼻のような崖。入場無料、20–30分。水族館の時間を守りたい日に。</p>
+              </div>
+            </button>
+            <button type="button" class="opt" data-choice="pineapple" onclick="setAfternoon('pineapple')">
+              <img src="images/pineapple.jpg" alt="名護パイナップルパーク">
+              <div class="inner">
+                <span class="tag" style="background:#C4642F">元の予定</span>
+                <h4>名護パイナップルパーク</h4>
+                <p>カートで畑を回る定番。甘い寄り道がしたいときの選択肢。</p>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="t-item" id="afternoonSlot"></div>
+          <div class="t-item">
+            <span class="t-dot"></span>
+            <div class="t-time" id="churaumiTime">16:00–18:30</div>
+            <article class="spot">
+              <img src="images/churaumi.jpg" alt="ジンベエザメが泳ぐ巨大水槽">
+              <div class="inner">
+                <h3>沖縄美ら海水族館</h3>
+                <p>世界最大級の水槽「黒潮の海」。ジンベエザメとマンタが頭上を横切る瞬間が、この日のクライマックスです。</p>
+                <div class="tips" id="churaumiTip">琉球村をしっかり見るなら、水族館は16時入りが現実的。閉館は公式で確認を。</div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <p class="prose">古宇利大橋は済井出からすぐ先。同日に島まで足を伸ばすと帰りが夜になります。</p>
+        <figure class="photo-fig">
+          <img src="images/kouri.jpg" alt="古宇利大橋と青い海" style="height:220px">
+          <figcaption>参考：古宇利大橋。欲張りプラン用の景色です。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CAVE -->
+    <section class="chapter" id="caveDay" style="--accent:#C4642F">
+      <div class="opener">
+        <img src="images/cave.jpg" alt="玉泉洞の鍾乳石">
+        <span class="shade"></span>
+        <div class="cap wrap">
+          <div class="date-row"><span class="badge" style="background:#C4642F"><span class="day-num-text">3日目</span></span><span class="day-date-text">9月14日（月）</span></div>
+          <div class="dayno en">GYOKUSENDO &amp; WHITE TERRACE</div>
+          <h2>太古の地下と、白い街</h2>
+          <p>雨でも成立する南の日。洞窟のあと、空港近くの瀬長島で夕景。</p>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="duo">
+          <figure class="photo-fig">
+            <img src="images/kingdom.jpg" alt="おきなわワールドの王国村">
+            <figcaption>地上は王国村。赤瓦と Habu ショー、エイサーも。</figcaption>
+          </figure>
+          <figure class="photo-fig">
+            <img src="images/shisa.jpg" alt="沖縄のシーサー">
+            <figcaption>お揃いシーサー作りは、ここで叶いやすい。</figcaption>
+          </figure>
+        </div>
+        <div class="timeline">
+          <div class="t-item">
+            <span class="t-dot"></span>
+            <div class="t-time">10:30–13:00</div>
+            <article class="spot">
+              <img src="images/cave.jpg" alt="玉泉洞内部">
+              <div class="inner">
+                <h3>おきなわワールド（玉泉洞）</h3>
+                <p>日本有数の鍾乳洞を歩いて探検。洞内は一年中ひんやり。シーサー絵付けや王国村と組み合わせると、午後までもたせすぎずに充実します。</p>
+                <div class="tips">歩きやすい靴。洞内は滑りやすい場所あり。ハブパークは苦手ならスキップでOK。</div>
+              </div>
+            </article>
+          </div>
+          <div class="t-item">
+            <span class="t-dot"></span>
+            <div class="t-time">15:30–17:30</div>
+            <article class="spot">
+              <img src="images/umikaji.jpg" alt="瀬長島ウミカジテラスの白い建物">
+              <div class="inner">
+                <h3>瀬長島ウミカジテラス</h3>
+                <p>白い段々の街並みが「日本のアマルフィ」と呼ばれるフォトスポット。夕陽と飛行機雲を見ながら、ソフトや買い物で余韻を。</p>
+                <div class="tips">日没前は駐車場が混みます。空いた列に入れて歩いた方が早いことも。</div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <figure class="photo-fig">
+          <img src="images/senaga.jpg" alt="豊崎海浜公園から見た瀬長島と那覇空港">
+          <figcaption>島全体の眺め。右奥が那覇空港。</figcaption>
+        </figure>
+      </div>
+    </section>
+  </div>
+
+  <!-- DAY 4 -->
+  <section class="chapter" id="day4">
+    <div class="opener">
+      <img src="images/kokusai.jpg" alt="国際通りのアーケードと人通り">
+      <span class="shade"></span>
+        <div class="cap wrap">
+        <div class="date-row"><span class="badge" style="background:#E25B45">4日目</span><span>9月15日（火）</span></div>
+        <div class="dayno en">NAHA LAST MORNING</div>
+        <h2>可愛いお土産と、最後の匂い</h2>
+        <p>帰りの前に、国際通りと牧志公設市場だけは押さえる。</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="timeline">
+        <div class="t-item">
+          <span class="t-dot"></span>
+          <div class="t-time">09:15–11:15</div>
+          <article class="spot">
+            <img src="images/makishi.jpg" alt="牧志公設市場の店内">
+            <div class="inner">
+              <h3>国際通り ＆ 牧志公設市場</h3>
+              <p>通りはお土産、市場は匂いと色。紅いもタルト、ちんすこう、シーサー小物はここで十分揃います。荷物は最小限で。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="duo">
+        <figure class="photo-fig">
+          <img src="images/kokusai.jpg" alt="国際通り">
+          <figcaption>国際通り。朝のうちが歩きやすい。</figcaption>
+        </figure>
+        <figure class="photo-fig">
+          <img src="images/eisa.jpg" alt="エイサーの演舞">
+          <figcaption>旅の記憶の色。太鼓は琉球村で先に体感済み、のはず。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="memo">
+      <h2>旅のメモ</h2>
+      <ul>
+        <li>曜日は 9/12土・13日・14月・15火。金・月始まりの古いメモは使わない。</li>
+        <li>潜水スクーターは名護市済井出（思い出販売所 美ら海）。顔が濡れないヘルメット。所要約1時間。</li>
+        <li>海の日の午後は、琉球村（厚め・南へ戻る）／万座毛（短時間）／パイナップルパーク（名護で寄りやすい）。</li>
+        <li>The Sinmayはスクーター直後の11時台。水族館帰りには寄らない。</li>
+        <li>観覧車はもう無い。アメリカンビレッジの夜は街並みとサンセットビーチが主役。</li>
+        <li>ステーキ・パンケーキ・ラテ写真は料理イメージ。A&amp;W・沖縄そば・各観光地は現地の公開写真です。</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<template id="tpl-ryukyu">
+  <span class="t-dot"></span>
+  <div class="t-time">13:30–15:20</div>
+  <article class="spot">
+    <img src="images/ryukyu-house.jpg" alt="琉球村の古民家内部">
+    <div class="inner">
+      <h3>琉球村（恩納村山田）</h3>
+      <p>移築された琉球の家々を歩き、エイサーを見て、シーサーを塗る。文化の密度は一番高い。済井出から南下→また北部の美ら海、と走る日になる。</p>
+      <div class="tips">大人2,000円前後（変動あり）。最終入場は閉園1時間前。エイサーの開演時刻を入場時に確認。</div>
+    </div>
+  </article>
+</template>
+<template id="tpl-manzamo">
+  <span class="t-dot"></span>
+  <div class="t-time">13:40–14:20</div>
+  <article class="spot">
+    <img src="images/manzamo.jpg" alt="万座毛">
+    <div class="inner">
+      <h3>万座毛</h3>
+      <p>崖のうえから東シナ海が開ける、恩納の看板絶景。滞在は短くていいので、水族館の時間を死守したい日の本命です。</p>
+      <div class="tips">無料。風が強い。柵の外に出ない。写真は崖のラインを入れて撮ると「万座毛らしい」。</div>
+    </div>
+  </article>
+</template>
+<template id="tpl-pineapple">
+  <span class="t-dot"></span>
+  <div class="t-time">13:40–14:40</div>
+  <article class="spot">
+    <img src="images/pineapple.jpg" alt="名護パイナップルパークのパイナップル畑">
+    <div class="inner">
+      <h3>名護パイナップルパーク</h3>
+      <p>カートで畑を一周して、甘いものを買う定番ルート。地味に感じるなら、滞在は50分で切り上げて美ら海へ先に行った方が満足度は上がります。</p>
+      <div class="tips">ソフトや試食が主役。観光バスが重なると混む。</div>
+    </div>
+  </article>
+</template>
+
+<footer>
+  写真：Wikimedia Commons / Unsplash、潜水スクーターはアソビュー掲載写真。<br>
+  沖縄家族旅行ガイドブック · 2026.9.12–9.15
+</footer>
+
+<script>
+const dayPair = document.getElementById('dayPair');
+const btnSea = document.getElementById('btnSeaFirst');
+const btnCave = document.getElementById('btnCaveFirst');
+const seaNum = document.querySelector('#seaDay .day-num-text');
+const seaDate = document.querySelector('#seaDay .day-date-text');
+const caveNum = document.querySelector('#caveDay .day-num-text');
+const caveDate = document.querySelector('#caveDay .day-date-text');
+const slot = document.getElementById('afternoonSlot');
+const churaumiTime = document.getElementById('churaumiTime');
+const churaumiTip = document.getElementById('churaumiTip');
+
+function setOrder(caveFirst){
+  dayPair.classList.toggle('swapped', caveFirst);
+  btnSea.classList.toggle('is-active', !caveFirst);
+  btnCave.classList.toggle('is-active', caveFirst);
+  if(caveFirst){
+    seaNum.textContent = '3日目'; seaDate.textContent = '9月14日（月）';
+    caveNum.textContent = '2日目'; caveDate.textContent = '9月13日（日）';
+  } else {
+    seaNum.textContent = '2日目'; seaDate.textContent = '9月13日（日）';
+    caveNum.textContent = '3日目'; caveDate.textContent = '9月14日（月）';
+  }
+}
+
+const afternoonMeta = {
+  ryukyu: {
+    time: '16:00–18:30',
+    tip: '琉球村を厚めに取る日。水族館は16時入りが現実的。閉館は公式で確認を。'
+  },
+  manzamo: {
+    time: '15:30–18:00',
+    tip: '万座毛は短いので、15:30入りに戻せます。ジンベエをゆっくり見る余裕あり。'
+  },
+  pineapple: {
+    time: '15:30–18:00',
+    tip: 'パークは50分で切り上げると美ら海15:30入りが守れる。'
+  }
+};
+
+function setAfternoon(key){
+  document.querySelectorAll('.opt').forEach(btn => {
+    const on = btn.dataset.choice === key;
+    btn.classList.toggle('is-on', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  const tpl = document.getElementById('tpl-' + key);
+  slot.innerHTML = tpl.innerHTML;
+  const meta = afternoonMeta[key];
+  churaumiTime.textContent = meta.time;
+  churaumiTip.textContent = meta.tip;
+}
+
+setAfternoon('ryukyu');
+</script>
+</body>
+</html>
