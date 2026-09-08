@@ -341,6 +341,34 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.25;margin:0}
 .memo ul{margin:0;padding-left:18px}
 .memo li{margin:8px 0}
 
+.pack{
+  margin:0 0 28px;background:#fff;border:1px solid var(--line);
+  border-radius:28px;padding:28px 22px 22px;box-shadow:var(--shadow);
+}
+.pack h2{font-size:26px;margin:0 0 6px}
+.pack-lead{margin:0 0 18px;color:var(--muted);font-size:14px}
+.pack-grid{
+  display:grid;gap:18px;
+  grid-template-columns:1fr;
+}
+@media(min-width:640px){.pack-grid{grid-template-columns:1fr 1fr}}
+.pack h3{
+  font-size:14px;letter-spacing:.08em;color:var(--lagoon);
+  margin:0 0 8px;
+}
+.pack ul{list-style:none;margin:0;padding:0}
+.pack li{margin:0}
+.pack label{
+  display:flex;gap:10px;align-items:flex-start;
+  padding:8px 0;border-bottom:1px solid var(--line);
+  cursor:pointer;font-size:15px;line-height:1.45;
+}
+.pack li:last-child label{border-bottom:0}
+.pack input{
+  margin:3px 0 0;width:16px;height:16px;accent-color:var(--lagoon);flex:none;
+}
+.pack label:has(input:checked){color:var(--muted);text-decoration:line-through}
+
 footer{
   margin-top:20px;padding:36px 20px 64px;text-align:center;
   color:var(--muted);font-size:12.5px;
@@ -377,6 +405,7 @@ footer{
     <a href="#seaDay">海の日</a>
     <a href="#caveDay">洞窟の日</a>
     <a href="#day4">4日目 帰宅</a>
+    <a href="#pack">持ち物</a>
   </div>
 </nav>
 
@@ -899,6 +928,51 @@ footer{
         <li>ステーキ・ラテ写真は料理イメージ。観光地写真は現地の公開写真です。</li>
       </ul>
     </section>
+    <section class="pack" id="pack">
+      <h2>持ち物</h2>
+      <p class="pack-lead">出発前にチェック。この端末にだけ残ります。</p>
+      <div class="pack-grid">
+        <div>
+          <h3>書類・お金</h3>
+          <ul>
+            <li><label><input type="checkbox"> 運転免許証（従来カード）</label></li>
+            <li><label><input type="checkbox"> オリックス予約（アネックス・19:30）</label></li>
+            <li><label><input type="checkbox"> 往路 PNR XLKDQV／復路 CR8DPA</label></li>
+            <li><label><input type="checkbox"> 健康保険証・子ども医療証</label></li>
+            <li><label><input type="checkbox"> 現金（京成バス・市場）</label></li>
+            <li><label><input type="checkbox"> 交通系IC（行きのバス）</label></li>
+          </ul>
+        </div>
+        <div>
+          <h3>海の日</h3>
+          <ul>
+            <li><label><input type="checkbox"> 水着・ラッシュガード</label></li>
+            <li><label><input type="checkbox"> 着替えと濡れ物袋</label></li>
+            <li><label><input type="checkbox"> サンダル</label></li>
+            <li><label><input type="checkbox"> 帽子・日焼け止め</label></li>
+            <li><label><input type="checkbox"> タオル</label></li>
+            <li><label><input type="checkbox"> ベリー用：身長が120cmあるか</label></li>
+          </ul>
+        </div>
+        <div>
+          <h3>洞窟・街・温泉</h3>
+          <ul>
+            <li><label><input type="checkbox"> 歩きやすい靴（洞内は滑る）</label></li>
+            <li><label><input type="checkbox"> 薄い上着（玉泉洞はひんやり）</label></li>
+            <li><label><input type="checkbox"> 龍神の湯に行くなら着替え（タオルは店で付く）</label></li>
+          </ul>
+        </div>
+        <div>
+          <h3>あると楽</h3>
+          <ul>
+            <li><label><input type="checkbox"> 充電器・モバイルバッテリー</label></li>
+            <li><label><input type="checkbox"> 常備薬・酔い止め・絆創膏</label></li>
+            <li><label><input type="checkbox"> 子ども用の着替え予備</label></li>
+            <li><label><input type="checkbox"> スマホにしおりを保存（オフライン）</label></li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </div>
 </main>
 
@@ -968,6 +1042,23 @@ function initCarousels(){
 }
 
 initCarousels();
+
+(function initPack(){
+  const key = 'okinawa-pack-202609';
+  const root = document.getElementById('pack');
+  if(!root) return;
+  const boxes = [...root.querySelectorAll('input[type="checkbox"]')];
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(key) || '{}'); } catch (e) {}
+  boxes.forEach((el, i) => {
+    el.checked = !!saved[i];
+    el.addEventListener('change', () => {
+      const next = {};
+      boxes.forEach((b, j) => { next[j] = b.checked; });
+      localStorage.setItem(key, JSON.stringify(next));
+    });
+  });
+})();
 </script>
 </body>
 </html>
