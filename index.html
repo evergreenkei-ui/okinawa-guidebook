@@ -192,6 +192,45 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.25;margin:0}
 .spot h3{font-size:20px;margin:0 0 6px}
 .spot p{margin:0;color:var(--muted);font-size:14.5px}
 .spot p a,.tips a,.prose a,.hours-warn a{color:var(--lagoon);font-weight:700}
+
+/* CAROUSEL — 1枠に複数枚 */
+.carousel{
+  position:relative;overflow:hidden;background:#102028;
+}
+.spot > .carousel{height:210px}
+@media(min-width:720px){.spot > .carousel{height:280px}}
+.photo-fig > .carousel{height:240px}
+@media(min-width:720px){.photo-fig > .carousel{height:340px}}
+.carousel-viewport{height:100%;overflow:hidden;touch-action:pan-y}
+.carousel-track{
+  display:flex;height:100%;width:100%;
+  transition:transform .35s ease;
+}
+.carousel-slide{flex:0 0 100%;height:100%;margin:0}
+.carousel-slide img,
+.spot .carousel img{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+.carousel-nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:44px;height:44px;border:0;border-radius:50%;
+  background:rgba(255,255,255,.9);color:var(--sea);
+  font-size:22px;line-height:1;z-index:2;
+  box-shadow:0 4px 14px rgba(0,0,0,.2);
+}
+.carousel-nav.prev{left:8px}
+.carousel-nav.next{right:8px}
+.carousel-dots{
+  position:absolute;bottom:10px;left:0;right:0;
+  display:flex;justify-content:center;gap:6px;z-index:2;
+}
+.carousel-dots button{
+  width:7px;height:7px;padding:0;border:0;border-radius:50%;
+  background:rgba(255,255,255,.5);min-height:0;
+}
+.carousel-dots button.is-on{background:#fff;width:16px;border-radius:999px}
+.carousel.is-single .carousel-nav,
+.carousel.is-single .carousel-dots{display:none}
 .tips{
   margin-top:10px;padding:10px 12px;border-radius:12px;
   background:var(--foam);color:var(--sea);font-size:13px;
@@ -292,7 +331,7 @@ footer{
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .opt,.toggle button{transition:none}
+  .opt,.toggle button,.carousel-track{transition:none}
 }
 </style>
 </head>
@@ -332,7 +371,7 @@ footer{
     </div>
     <div class="toc-grid">
       <a class="toc-card" href="#day1">
-        <img src="images/av-day.jpg" alt="美浜アメリカンビレッジの街並み">
+        <img src="images/av-night-street.jpg" alt="夜の美浜アメリカンビレッジ">
         <span class="shade"></span>
         <div class="body"><div class="n">DAY 01 · SAT 9.12</div><h3>北谷の夜へ</h3></div>
       </a>
@@ -365,7 +404,7 @@ footer{
   <!-- DAY 1 -->
   <section class="chapter" id="day1">
     <div class="opener">
-      <img src="images/av-day.jpg" alt="美浜アメリカンビレッジのカラフルな建物">
+      <img src="images/av-night-street.jpg" alt="夜の美浜アメリカンビレッジ">
       <span class="shade"></span>
         <div class="cap wrap">
         <div class="date-row"><span class="badge" style="background:#E25B45">1日目</span><span>9月12日（土）</span></div>
@@ -381,8 +420,8 @@ footer{
           <figcaption>隣のサンセットビーチ。日没後の散歩にもぴったり。</figcaption>
         </figure>
         <figure class="photo-fig">
-          <img src="images/av-day.jpg" alt="アメリカンビレッジのリゾート街並み">
-          <figcaption>西海岸らしい、色の多い通り。</figcaption>
+          <img src="images/av-shark.jpg" alt="アメリカンビレッジのサメのオブジェ">
+          <figcaption>デポアイランドの遊び心。観覧車は2022年になくなっています。</figcaption>
         </figure>
       </div>
       <div class="hours-warn">
@@ -396,7 +435,7 @@ footer{
           <span class="t-dot"></span>
           <div class="t-time">12:20 / 12:39発</div>
           <article class="spot">
-            <img src="images/av-day.jpg" alt="出発のイメージ">
+            <img src="images/keisei-bus.jpg" alt="京成バスの高速バス">
             <div class="inner">
               <h3>京成バス 幕張ベイタウン → 成田T3</h3>
               <p>本線はベイタウン<strong>12:39発 → T3 13:32着</strong>。大人1,200円・小児600円。予約不可。行きは車内でIC／現金。1本逃すと13:59発（T3 14:52）で、預け荷物がある日は賭けない。</p>
@@ -408,7 +447,7 @@ footer{
           <span class="t-dot"></span>
           <div class="t-time">15:50 → 19:00</div>
           <article class="spot">
-            <img src="images/senaga.jpg" alt="那覇空港方面">
+            <img src="images/jetstar.jpg" alt="Jetstarの旅客機">
             <div class="inner">
               <h3>Jetstar GK 成田T3 → 那覇</h3>
               <p>PNR <strong>XLKDQV</strong>。国内線は預け・チェックインが出発30分前、ゲート15分前。家族＋荷物なら90〜120分前にターミナルへ。預けは15:20、ゲート15:35が目安。</p>
@@ -420,7 +459,7 @@ footer{
           <span class="t-dot"></span>
           <div class="t-time">19:00〜貸出</div>
           <article class="spot">
-            <img src="images/sunset-beach.jpg" alt="西海岸へ向かう夜">
+            <img src="images/orix.jpg" alt="オリックスレンタカーの店舗">
             <div class="inner">
               <h3>国内線1F外 ⑪-B → レンタカー</h3>
               <p>那覇空港店なら送迎約20分で店着19:40前後。アネックスなら⑪-Bで店名を声かけ、約5分。電話結果でここだけ書き換える。</p>
@@ -432,7 +471,18 @@ footer{
           <span class="t-dot"></span>
           <div class="t-time">20:30–22:30 北谷</div>
           <article class="spot">
-            <img src="images/av-day.jpg" alt="美浜アメリカンビレッジ">
+            <div class="carousel" data-carousel aria-label="美浜アメリカンビレッジの写真">
+              <div class="carousel-viewport">
+                <div class="carousel-track">
+                  <figure class="carousel-slide"><img src="images/av-night-street.jpg" alt="夜のパームツリーとライトアップされた街並み"></figure>
+                  <figure class="carousel-slide"><img src="images/av-night-blueseal.jpg" alt="ブルーシールの看板が光る夜の通り"></figure>
+                  <figure class="carousel-slide"><img src="images/av-shark.jpg" alt="通りに吊るされたサメのオブジェ"></figure>
+                </div>
+              </div>
+              <button type="button" class="carousel-nav prev" aria-label="前の写真">‹</button>
+              <button type="button" class="carousel-nav next" aria-label="次の写真">›</button>
+              <div class="carousel-dots"></div>
+            </div>
             <div class="inner">
               <h3>美浜アメリカンビレッジ</h3>
               <p>ホテルは飛ばして北谷へ。着は店次第で20:30–21:30。ショップとライト、隣のサンセットビーチ。旧観覧車跡はホテルになっているので、目印は桑江交差点とデポアイランドで十分。</p>
@@ -499,7 +549,19 @@ footer{
             <span class="t-dot"></span>
             <div class="t-time">09:15集合 / 09:30</div>
             <article class="spot">
-              <img src="images/tropical-under.jpg" alt="透明度の高い海の中">
+              <div class="carousel" data-carousel aria-label="シーウォークの写真">
+                <div class="carousel-viewport">
+                  <div class="carousel-track">
+                    <figure class="carousel-slide"><img src="images/seawalk-1.jpg" alt="ヘルメットをかぶって熱帯魚に囲まれるシーウォーク"></figure>
+                    <figure class="carousel-slide"><img src="images/seawalk-2.jpg" alt="ガイドレールにつかまって歩くシーウォーク"></figure>
+                    <figure class="carousel-slide"><img src="images/seawalk-3.jpg" alt="シーウォーク体験の案内写真"></figure>
+                    <figure class="carousel-slide"><img src="images/seawalk-4.jpg" alt="シーウォークの開催時間の案内"></figure>
+                  </div>
+                </div>
+                <button type="button" class="carousel-nav prev" aria-label="前の写真">‹</button>
+                <button type="button" class="carousel-nav next" aria-label="次の写真">›</button>
+                <div class="carousel-dots"></div>
+              </div>
               <div class="inner">
                 <h3>エムズオーシャン シーウォーク</h3>
                 <p>かりゆしビーチ（名護市喜瀬1996）。ヘルメット型で顔が濡れず、泳げなくてもOK。所要60–90分、水中は約15分。11:00前後終了。5歳は店側が予約OK済み。</p>
@@ -507,16 +569,6 @@ footer{
               </div>
             </article>
           </div>
-        </div>
-        <div class="duo">
-          <figure class="photo-fig">
-            <img src="images/hero-beach.jpg" alt="白い砂と青い海">
-            <figcaption>かりゆしビーチ。シーウォークのあとはすぐ車へ。</figcaption>
-          </figure>
-          <figure class="photo-fig">
-            <img src="images/kouri-beach.jpg" alt="ターコイズの海">
-            <figcaption>西海岸らしい色。長居せず許田へ南下する。</figcaption>
-          </figure>
         </div>
 
         <div class="timeline">
@@ -558,7 +610,18 @@ footer{
             <span class="t-dot"></span>
             <div class="t-time">12:45集合 / 13:00</div>
             <article class="spot">
-              <img src="images/kouri.jpg" alt="青い海の上">
+              <div class="carousel" data-carousel aria-label="パラセーリングの海">
+                <div class="carousel-viewport">
+                  <div class="carousel-track">
+                    <figure class="carousel-slide"><img src="images/kouri.jpg" alt="青い海の上"></figure>
+                    <figure class="carousel-slide"><img src="images/kouri-beach.jpg" alt="ターコイズの海"></figure>
+                    <figure class="carousel-slide"><img src="images/hero-beach.jpg" alt="白い砂と青い海"></figure>
+                  </div>
+                </div>
+                <button type="button" class="carousel-nav prev" aria-label="前の写真">‹</button>
+                <button type="button" class="carousel-nav next" aria-label="次の写真">›</button>
+                <div class="carousel-dots"></div>
+              </div>
               <div class="inner">
                 <h3>マリンクラブベリー パラセーリング</h3>
                 <p>喜瀬115-2・コートヤード1F。所要約90分、飛行約10分、高度40–50m。基本2人乗り。満5歳・身長120cm以上・体重20–120kg。</p>
@@ -570,7 +633,17 @@ footer{
             <span class="t-dot"></span>
             <div class="t-time">15:05–15:40</div>
             <article class="spot">
-              <img src="images/latte.jpg" alt="ラテのイメージ">
+              <div class="carousel" data-carousel aria-label="The Sinmay">
+                <div class="carousel-viewport">
+                  <div class="carousel-track">
+                    <figure class="carousel-slide"><img src="images/latte.jpg" alt="黒糖ラテのイメージ"></figure>
+                    <figure class="carousel-slide"><img src="images/cafe-bench.jpg" alt="カフェで一息つくイメージ"></figure>
+                  </div>
+                </div>
+                <button type="button" class="carousel-nav prev" aria-label="前の写真">‹</button>
+                <button type="button" class="carousel-nav next" aria-label="次の写真">›</button>
+                <div class="carousel-dots"></div>
+              </div>
               <div class="inner">
                 <h3>The Sinmay（今帰仁・玉城）</h3>
                 <p>喜瀬から約30–40分。目の前で黒糖を削る生黒糖ラテが看板。テイクアウト中心。公式：<a href="https://www.thesinmay.com" target="_blank" rel="noopener">thesinmay.com</a></p>
@@ -630,22 +703,23 @@ footer{
         </div>
       </div>
       <div class="wrap">
-        <div class="duo">
-          <figure class="photo-fig">
-            <img src="images/kingdom.jpg" alt="おきなわワールドの王国村">
-            <figcaption>地上は王国村。赤瓦と Habu ショー、エイサーも。</figcaption>
-          </figure>
-          <figure class="photo-fig">
-            <img src="images/shisa.jpg" alt="沖縄のシーサー">
-            <figcaption>お揃いシーサー作りは、ここで叶いやすい。</figcaption>
-          </figure>
-        </div>
         <div class="timeline">
           <div class="t-item">
             <span class="t-dot"></span>
             <div class="t-time">10:30–13:00</div>
             <article class="spot">
-              <img src="images/cave.jpg" alt="玉泉洞内部">
+              <div class="carousel" data-carousel aria-label="おきなわワールド">
+                <div class="carousel-viewport">
+                  <div class="carousel-track">
+                    <figure class="carousel-slide"><img src="images/cave.jpg" alt="玉泉洞の内部"></figure>
+                    <figure class="carousel-slide"><img src="images/kingdom.jpg" alt="おきなわワールドの王国村"></figure>
+                    <figure class="carousel-slide"><img src="images/shisa.jpg" alt="沖縄のシーサー"></figure>
+                  </div>
+                </div>
+                <button type="button" class="carousel-nav prev" aria-label="前の写真">‹</button>
+                <button type="button" class="carousel-nav next" aria-label="次の写真">›</button>
+                <div class="carousel-dots"></div>
+              </div>
               <div class="inner">
                 <h3>おきなわワールド（玉泉洞）</h3>
                 <p>日本有数の鍾乳洞を歩いて探検。洞内は一年中ひんやり。シーサー絵付けや王国村と組み合わせると、午後までもたせすぎずに充実します。</p>
@@ -657,7 +731,17 @@ footer{
             <span class="t-dot"></span>
             <div class="t-time">15:30–17:30</div>
             <article class="spot">
-              <img src="images/umikaji.jpg" alt="瀬長島ウミカジテラスの白い建物">
+              <div class="carousel" data-carousel aria-label="瀬長島ウミカジテラス">
+                <div class="carousel-viewport">
+                  <div class="carousel-track">
+                    <figure class="carousel-slide"><img src="images/umikaji.jpg" alt="瀬長島ウミカジテラスの白い建物"></figure>
+                    <figure class="carousel-slide"><img src="images/senaga.jpg" alt="瀬長島と那覇空港"></figure>
+                  </div>
+                </div>
+                <button type="button" class="carousel-nav prev" aria-label="前の写真">‹</button>
+                <button type="button" class="carousel-nav next" aria-label="次の写真">›</button>
+                <div class="carousel-dots"></div>
+              </div>
               <div class="inner">
                 <h3>瀬長島ウミカジテラス</h3>
                 <p>白い段々の街並みが「日本のアマルフィ」と呼ばれるフォトスポット。夕陽と飛行機雲を見ながら、ソフトや買い物で余韻を。</p>
@@ -709,7 +793,17 @@ footer{
           <span class="t-dot"></span>
           <div class="t-time">11:00–11:15返却 → 13:15</div>
           <article class="spot">
-            <img src="images/senaga.jpg" alt="那覇空港">
+            <div class="carousel" data-carousel aria-label="返却とJetstar">
+              <div class="carousel-viewport">
+                <div class="carousel-track">
+                  <figure class="carousel-slide"><img src="images/orix.jpg" alt="オリックスレンタカーの店舗"></figure>
+                  <figure class="carousel-slide"><img src="images/jetstar.jpg" alt="Jetstarの旅客機"></figure>
+                </div>
+              </div>
+              <button type="button" class="carousel-nav prev" aria-label="前の写真">‹</button>
+              <button type="button" class="carousel-nav next" aria-label="次の写真">›</button>
+              <div class="carousel-dots"></div>
+            </div>
             <div class="inner">
               <h3>レンタカー返却 → Jetstar GK 那覇 → 成田T3</h3>
               <p>PNR <strong>CR8DPA</strong>。那覇 13:15 → 成田T3 15:55。送迎で国内線へ。ホテルの12:00発シャトルは間に合わない。</p>
@@ -720,7 +814,7 @@ footer{
           <span class="t-dot"></span>
           <div class="t-time">17:25発 → 18:35着</div>
           <article class="spot">
-            <img src="images/av-night.jpg" alt="帰宅の夜">
+            <img src="images/keisei-bus.jpg" alt="京成バスの高速バス">
             <div class="inner">
               <h3>京成バス 成田T3 → 幕張ベイタウン</h3>
               <p>本線は T3 <strong>17:25発 → ベイタウン 18:35着</strong>。帰りは空港で切符を買ってから並ぶ（車内精算ではない）。のりばは <strong>1F 10番</strong>（到着ロビーと同じ階）。</p>
@@ -761,7 +855,7 @@ footer{
 </main>
 
 <footer>
-  写真：Wikimedia Commons / Unsplash。<br>
+  写真：シーウォークは店舗案内。京成バス・Jetstar・オリックス・アメリカンビレッジは提供写真。その他 Wikimedia Commons / Unsplash。<br>
   沖縄家族旅行ガイドブック · 2026.9.12–9.15
 </footer>
 
@@ -786,6 +880,46 @@ function setOrder(caveFirst){
     caveNum.textContent = '3日目'; caveDate.textContent = '9月14日（月）';
   }
 }
+
+function initCarousels(){
+  document.querySelectorAll('[data-carousel]').forEach(root => {
+    const track = root.querySelector('.carousel-track');
+    const slides = root.querySelectorAll('.carousel-slide');
+    const dotsBox = root.querySelector('.carousel-dots');
+    const n = slides.length;
+    if(n < 2){
+      root.classList.add('is-single');
+      return;
+    }
+    let i = 0;
+    slides.forEach((_, idx) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', (idx + 1) + '枚目');
+      b.addEventListener('click', () => go(idx));
+      dotsBox.appendChild(b);
+    });
+    const dots = dotsBox.querySelectorAll('button');
+    function go(to){
+      i = (to + n) % n;
+      track.style.transform = 'translateX(' + (-i * 100) + '%)';
+      dots.forEach((b, idx) => b.classList.toggle('is-on', idx === i));
+    }
+    root.querySelector('.carousel-nav.prev').addEventListener('click', () => go(i - 1));
+    root.querySelector('.carousel-nav.next').addEventListener('click', () => go(i + 1));
+    let x0 = null;
+    root.addEventListener('pointerdown', e => { x0 = e.clientX; });
+    root.addEventListener('pointerup', e => {
+      if(x0 == null) return;
+      const d = e.clientX - x0;
+      if(Math.abs(d) > 40) go(i + (d < 0 ? 1 : -1));
+      x0 = null;
+    });
+    go(0);
+  });
+}
+
+initCarousels();
 </script>
 </body>
 </html>
