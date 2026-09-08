@@ -182,7 +182,10 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.25;margin:0}
   position:absolute;left:-28px;top:4px;width:18px;height:18px;border-radius:50%;
   background:var(--accent,#E25B45);box-shadow:0 0 0 5px var(--paper);
 }
-.t-time{font-size:13px;font-weight:700;color:var(--accent,#E25B45);margin-bottom:6px}
+.t-time{font-size:13px;font-weight:700;color:var(--accent,#E25B45);margin-bottom:2px}
+.t-drive{
+  margin:0 0 8px;font-size:12.5px;font-weight:600;color:var(--muted);
+}
 .spot{
   background:#fff;border-radius:20px;overflow:hidden;
   border:1px solid var(--line);box-shadow:0 10px 28px rgba(7,59,76,.07);
@@ -449,6 +452,7 @@ footer{
         <div class="t-item">
           <span class="t-dot"></span>
           <div class="t-time">19:00〜貸出</div>
+          <p class="t-drive">那覇空港 → 送迎 約20分（アネックスなら約5分）</p>
           <article class="spot">
             <img src="images/orix.jpg" alt="オリックスレンタカーの店舗">
             <div class="inner">
@@ -461,6 +465,7 @@ footer{
         <div class="t-item">
           <span class="t-dot"></span>
           <div class="t-time">20:30–22:30 北谷</div>
+          <p class="t-drive">オリックス発 → 車 約35–45分　／　北谷→ホテル 車 約20分</p>
           <article class="spot">
             <div class="carousel" data-carousel aria-label="美浜アメリカンビレッジの写真">
               <div class="carousel-viewport">
@@ -560,6 +565,7 @@ footer{
           <div class="t-item">
             <span class="t-dot"></span>
             <div class="t-time">09:15集合 / 09:30</div>
+            <p class="t-drive">ホテル 8:00発 → 車 約45–55分</p>
             <article class="spot">
               <div class="carousel" data-carousel aria-label="シーウォークの写真">
                 <div class="carousel-viewport">
@@ -587,6 +593,7 @@ footer{
           <div class="t-item">
             <span class="t-dot"></span>
             <div class="t-time">11:20–12:20</div>
+            <p class="t-drive">かりゆし 11:10発 → 車 約8–12分</p>
             <article class="spot">
               <img src="images/soba.jpg" alt="沖縄そば">
               <div class="inner">
@@ -601,6 +608,7 @@ footer{
           <div class="t-item">
             <span class="t-dot"></span>
             <div class="t-time">12:45集合 / 13:00</div>
+            <p class="t-drive">許田 12:20発 → 車 約10–15分</p>
             <article class="spot">
               <div class="carousel" data-carousel aria-label="マリンクラブベリーのパラセーリング">
                 <div class="carousel-viewport">
@@ -625,6 +633,7 @@ footer{
           <div class="t-item">
             <span class="t-dot"></span>
             <div class="t-time">15:05–15:40</div>
+            <p class="t-drive">喜瀬 14:30発 → 車 約30–40分</p>
             <article class="spot">
               <div class="carousel" data-carousel aria-label="The Sinmay">
                 <div class="carousel-viewport">
@@ -654,6 +663,7 @@ footer{
           <div class="t-item">
             <span class="t-dot"></span>
             <div class="t-time">16:00–18:00</div>
+            <p class="t-drive">Sinmay 15:40発 → 車 約15–20分　／　美ら海 18:00発 → ホテル 車 約90–120分</p>
             <article class="spot">
               <img src="images/churaumi.jpg" alt="ジンベエザメが泳ぐ巨大水槽">
               <div class="inner">
@@ -680,10 +690,17 @@ footer{
         </div>
       </div>
       <div class="wrap">
+        <div class="hours-warn">
+          <div>
+            <strong>ホテル 9:00発が本線</strong>
+            朝食は7:00開始。与儀から南城市・玉泉洞は車 約50–65分。10:30入りに余裕を見る。帰りは瀬長島からホテルまで車 約40–50分。
+          </div>
+        </div>
         <div class="timeline">
           <div class="t-item">
             <span class="t-dot"></span>
             <div class="t-time">10:30–13:00</div>
+            <p class="t-drive">ホテル 9:00発 → 車 約50–65分</p>
             <article class="spot">
               <div class="carousel" data-carousel aria-label="おきなわワールド">
                 <div class="carousel-viewport">
@@ -707,6 +724,7 @@ footer{
           <div class="t-item">
             <span class="t-dot"></span>
             <div class="t-time">15:30–17:30</div>
+            <p class="t-drive">玉泉洞 14:50発 → 車 約25–35分　／　瀬長島 17:30発 → ホテル 車 約40–50分</p>
             <article class="spot">
               <div class="carousel" data-carousel aria-label="瀬長島ウミカジテラス">
                 <div class="carousel-viewport">
@@ -769,6 +787,7 @@ footer{
         <div class="t-item">
           <span class="t-dot"></span>
           <div class="t-time">11:00–11:15返却 → 13:15</div>
+          <p class="t-drive">ホテル 8:30発 → 車 約40–50分（給油込みでも11時前着が目安）</p>
           <article class="spot">
             <div class="carousel" data-carousel aria-label="返却とJetstar">
               <div class="carousel-viewport">
@@ -820,7 +839,7 @@ footer{
         <li>往路 PNR XLKDQV（NRT T3 15:50 → OKA 19:00）。復路 PNR CR8DPA（OKA 13:15 → NRT T3 15:55）。</li>
         <li>京成バスは予約不可。行きは車内精算、帰りは空港で切符を買って T3 1F 10番。本線は行き12:39／帰り17:25。</li>
         <li>Jetstar国内線は預け・チェックイン出発30分前、ゲート15分前。家族＋荷物なら90〜120分前。</li>
-        <li>レンタカーはオリックス電話待ち。免許は従来カード。ホテル空港シャトルは使わない。</li>
+        <li>車の時間は目安。渋滞で10–20分延びる前提。ホテル発は海の日8:00、洞窟の日9:00、帰り8:30。</li>
         <li>シーウォークはエムズオーシャン（かりゆしビーチ）。波・風で欠航。前日に 080-6489-5607。</li>
         <li>日曜ランチは道の駅許田。12:20に切ってベリー12:45へ。5歳が飛ぶなら身長120cm以上。</li>
         <li>美ら海は16時入り、黒潮の海を先に。そのあとはホテル直帰。夜食はライカム。</li>
