@@ -221,6 +221,12 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.25;margin:0}
 .carousel.contain img{
   width:100%;height:100%;object-fit:contain;display:block;
 }
+.carousel-slide.fit{
+  background:#073B4C;
+}
+.carousel-slide.fit img{
+  object-fit:contain;
+}
 .carousel-nav{
   position:absolute;top:50%;transform:translateY(-50%);
   width:44px;height:44px;border:0;border-radius:50%;
@@ -387,7 +393,7 @@ footer{
         <div class="body"><div class="n">DAY 01 · SAT 9.12</div><h3>北谷の夜へ</h3></div>
       </a>
       <a class="toc-card" href="#seaDay">
-        <img src="images/churaumi.jpg" alt="美ら海水族館の巨大水槽とジンベエザメ">
+        <img src="images/churaumi-1.jpg" alt="美ら海水族館の巨大水槽とジンベエザメ">
         <span class="shade"></span>
         <div class="body"><div class="n">SEA DAY</div><h3>シーウォークと美ら海</h3></div>
       </a>
@@ -552,7 +558,7 @@ footer{
     <!-- SEA -->
     <section class="chapter" id="seaDay" style="--accent:#0E7C8B">
       <div class="opener">
-        <img src="images/churaumi.jpg" alt="美ら海水族館 黒潮の海">
+        <img src="images/churaumi-1.jpg" alt="美ら海水族館 黒潮の海">
         <span class="shade"></span>
         <div class="cap wrap">
           <div class="date-row"><span class="badge" style="background:#0E7C8B"><span class="day-num-text">2日目</span></span><span class="day-date-text">9月13日（日）</span></div>
@@ -670,7 +676,19 @@ footer{
             <div class="t-time">16:00–18:00</div>
             <p class="t-drive">Sinmay 15:40発 → 車 約15–20分　／　美ら海 18:00発 → ホテル 車 約90–120分</p>
             <article class="spot">
-              <img src="images/churaumi.jpg" alt="ジンベエザメが泳ぐ巨大水槽">
+              <div class="carousel" data-carousel aria-label="沖縄美ら海水族館">
+                <div class="carousel-viewport">
+                  <div class="carousel-track">
+                    <figure class="carousel-slide"><img src="images/churaumi-1.jpg" alt="黒潮の海を泳ぐジンベエザメ"></figure>
+                    <figure class="carousel-slide"><img src="images/churaumi-2.jpg" alt="美ら海水族館の外観と魚のモニュメント"></figure>
+                    <figure class="carousel-slide"><img src="images/churaumi-3.jpg" alt="屋外水槽と海が見える施設"></figure>
+                    <figure class="carousel-slide fit"><img src="images/churaumi-4.jpg" alt="水深ごとの生きものの案内"></figure>
+                  </div>
+                </div>
+                <button type="button" class="carousel-nav prev" aria-label="前の写真">‹</button>
+                <button type="button" class="carousel-nav next" aria-label="次の写真">›</button>
+                <div class="carousel-dots"></div>
+              </div>
               <div class="inner">
                 <h3>沖縄美ら海水族館</h3>
                 <p>世界最大級の水槽「黒潮の海」。16時入りなので、先に黒潮の海を見る。9月は8:30–18:30、入館締切17:30。</p>
