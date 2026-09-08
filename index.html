@@ -214,6 +214,13 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.25;margin:0}
 .spot .carousel img{
   width:100%;height:100%;object-fit:cover;display:block;
 }
+.carousel.contain .carousel-slide{
+  background:#1a1230;
+  display:flex;align-items:center;justify-content:center;
+}
+.carousel.contain img{
+  width:100%;height:100%;object-fit:contain;display:block;
+}
 .carousel-nav{
   position:absolute;top:50%;transform:translateY(-50%);
   width:44px;height:44px;border:0;border-radius:50%;
@@ -635,14 +642,12 @@ footer{
             <div class="t-time">15:05–15:40</div>
             <p class="t-drive">喜瀬 14:30発 → 車 約30–40分</p>
             <article class="spot">
-              <div class="carousel" data-carousel aria-label="The Sinmay">
+              <div class="carousel contain" data-carousel aria-label="The Sinmay">
                 <div class="carousel-viewport">
                   <div class="carousel-track">
-                    <figure class="carousel-slide"><img src="images/sinmay-1.jpg" alt="目の前で黒糖を削る生黒糖ラテ"></figure>
-                    <figure class="carousel-slide"><img src="images/sinmay-2.jpg" alt="The Sinmayのドリンク2杯"></figure>
-                    <figure class="carousel-slide"><img src="images/sinmay-3.jpg" alt="沖縄生黒糖ラテの案内"></figure>
                     <figure class="carousel-slide"><img src="images/sinmay-4.jpg" alt="店内で黒糖を削る様子"></figure>
-                    <figure class="carousel-slide"><img src="images/sinmay-5.jpg" alt="The Sinmayのラテメニュー"></figure>
+                    <figure class="carousel-slide"><img src="images/sinmay-1.jpg" alt="目の前で黒糖を削る生黒糖ラテ"></figure>
+                    <figure class="carousel-slide"><img src="images/sinmay-3.jpg" alt="沖縄生黒糖ラテの案内"></figure>
                     <figure class="carousel-slide"><img src="images/sinmay-6.jpg" alt="The Sinmayのラテ価格表"></figure>
                   </div>
                 </div>
